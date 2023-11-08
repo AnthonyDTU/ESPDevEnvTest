@@ -3,7 +3,7 @@ services:
     entrypoint:
     - sleep
     - infinity
-    build: dockerfile
+    build: Dockerfile
     init: true
     volumes:
     - type: bind
