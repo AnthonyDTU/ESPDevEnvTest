@@ -3,7 +3,7 @@ services:
     entrypoint:
     - sleep
     - infinity
-    build: Dockerfile
+    iamge: ubuntu:22.04
     init: true
     volumes:
     - type: bind
