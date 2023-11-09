@@ -3,6 +3,8 @@ services:
     entrypoint:
     - sleep
     - infinity
+    # build:
+    #   dockerfile: Dockerfile
     image: antonlage/espimage:latest
     init: true
     volumes:

@@ -58,14 +58,27 @@ RUN apt update && apt upgrade -y && \
 
 
 # Installing Python
-RUN sudo apt update \
-    sudo apt-get install python3-venv
+RUN apt update && \
+    apt-get install python3-venv -y
+
+    
 
 ## Installing PlatformIO
-RUN   mkdir -p /usr/local/bin \ 
-      sudo ln -s ~/.platformio/penv/bin/platformio /usr/local/bin/platformio \
-      sudd ln -s ~/.platformio/penv/bin/pio /usr/local/bin/pio \
-      sudo ln -s ~/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
+RUN   mkdir -p /usr/local/bin && \ 
+      ln -s ~/.platformio/penv/bin/platformio /usr/local/bin/platformio && \
+      ln -s ~/.platformio/penv/bin/pio /usr/local/bin/pio && \
+      ln -s ~/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
+
+# install VS Code (code-server)
+RUN curl -fsSL https://code-server.dev/install.sh | sh
+
+# install VS Code extensions
+RUN code-server --install-extension platformio.platformio-ide && \
+    code-server --install-extension thecreativedodo.usbip-connect && \
+    code-server --install-extension ms-vscode.cpptools
 
 
-ENTRYPOINT [ "pwd" ]
+EXPOSE 8080
+
+
+CMD [ "" ]
