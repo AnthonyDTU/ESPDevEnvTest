@@ -3,9 +3,9 @@ services:
     entrypoint:
     - sleep
     - infinity
-    # build:
-    #   dockerfile: Dockerfile
-    image: antonlage/espimage:latest
+     build:
+       dockerfile: Dockerfile
+    # image: antonlage/espimage:latest
     init: true
     volumes:
     - type: bind
