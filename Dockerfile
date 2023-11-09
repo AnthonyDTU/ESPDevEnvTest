@@ -63,22 +63,21 @@ RUN apt update && \
 
     
 
-## Installing PlatformIO
-RUN   mkdir -p /usr/local/bin && \ 
-      ln -s ~/.platformio/penv/bin/platformio /usr/local/bin/platformio && \
-      ln -s ~/.platformio/penv/bin/pio /usr/local/bin/pio && \
-      ln -s ~/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
+# Installing PlatformIO
+# RUN   mkdir -p /usr/local/bin && \ 
+#       ln -s ~/.platformio/penv/bin/platformio /usr/local/bin/platformio && \
+#       ln -s ~/.platformio/penv/bin/pio /usr/local/bin/pio && \
+#       ln -s ~/.platformio/penv/bin/piodebuggdb /usr/local/bin/piodebuggdb
 
 # install VS Code (code-server)
-RUN curl -fsSL https://code-server.dev/install.sh | sh
+# RUN curl -fsSL https://code-server.dev/install.sh | sh
 
-# install VS Code extensions
-RUN code-server --install-extension platformio.platformio-ide && \
-    code-server --install-extension thecreativedodo.usbip-connect && \
-    code-server --install-extension ms-vscode.cpptools
+# # install VS Code extensions
+# RUN code --install-extension platformio.platformio-ide && \
+#     code --install-extension thecreativedodo.usbip-connect && \
+#     code --install-extension ms-vscode.cpptools
 
 
 EXPOSE 8080
 
-
-CMD [ "" ]
+CMD [ "./.vscode/installExtensions.sh" ]
