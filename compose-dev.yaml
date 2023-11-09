@@ -3,7 +3,7 @@ services:
     entrypoint:
     - sleep
     - infinity
-    image: antonlage/espimage:v2
+    image: antonlage/espimage:latest
     init: true
     volumes:
     - type: bind
