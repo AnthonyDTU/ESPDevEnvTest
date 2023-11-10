@@ -1,9 +1,9 @@
 services:
   app:
     entrypoint:
-    - /.vscode/installExtensions.sh
-    # - sleep
-    # - infinity
+    #- /.vscode/installExtensions.sh
+    - sleep
+    - infinity
     # build:
     #   dockerfile: Dockerfile
     image: antonlage/espimage:latest
