@@ -1,6 +1,6 @@
 services:
   app:
-    entrypoint:
+    # entrypoint:
     # - /.vscode/installExtensions.sh
     # - sleep
     # - infinity
