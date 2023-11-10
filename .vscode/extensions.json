@@ -3,6 +3,10 @@
     // for the documentation about the extensions.json format
     "recommendations": [
         "platformio.platformio-ide"
+        "thecreativedodo.usbip-connect"
+        "ms-vscode.cpptools"
+        "mhutchie.git-graph"
+        "qhoekman.language-plantuml"        
     ],
     "unwantedRecommendations": [
         "ms-vscode.cpptools-extension-pack"
