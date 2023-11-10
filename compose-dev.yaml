@@ -4,9 +4,9 @@ services:
     - /.vscode/installExtensions.sh
     - sleep
     - infinity
-    # build:
+    build: .
     #   dockerfile: Dockerfile
-    image: antonlage/espimage:latest
+    #image: antonlage/espimage:latest
     init: true
     volumes:
     - type: bind
