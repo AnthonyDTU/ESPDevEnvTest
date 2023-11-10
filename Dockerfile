@@ -47,6 +47,9 @@ RUN apt update && apt upgrade -y && \
     gem install coderay -v ${CODERAY_VERSION} && \
     gem install pygments.rb && \
     gem install asciidoctor-diagram -v ${ASCIIDOCTOR_DIAGRAM_VERSION} && \
+    code --install-extension platformio.platformio-ide && \
+    code --install-extension thecreativedodo.usbip-connect && \
+    code --install-extension ms-vscode.cpptools && \
     apt clean
 
 # RUN curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o /root/.git-completion.bash && \
@@ -78,6 +81,6 @@ RUN apt update && \
 #     code --install-extension ms-vscode.cpptools
 
 
-EXPOSE 8080
+EXPOSE 5000
 
-CMD [ "./.vscode/installExtensions.sh" ]
+CMD [ "/.vscode/installExtensions.sh", "sleep", "infinity" ]
